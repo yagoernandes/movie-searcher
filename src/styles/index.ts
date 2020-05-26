@@ -9,9 +9,10 @@ export const Page = styled.div`
 	background-color: ${BACKGROUND_COLOR};
 	justify-content: center;
 	align-items: center;
-
+	line-height: 1.5em;
+	
 	h1 {
-		text-align: center;
 		font-size: 36px;
+		line-height: 1.5em;
 	}
 `

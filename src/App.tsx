@@ -14,10 +14,10 @@ const App: React.FC = () => {
 			<Router>
 				<Switch>
 					<Page>
-						<Route path="/result">
+						<Route path="/">
 							<Result />
 						</Route>
-						<Route path="/">
+						<Route path="/home">
 							<Home />
 						</Route>
 					</Page>
