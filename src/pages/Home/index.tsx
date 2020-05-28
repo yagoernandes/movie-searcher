@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
 import { SearchPage } from './styles'
+import { useDispatch } from 'react-redux'
+import { searchRequest } from '../../store/ducks/api/actions'
+
+import { API_TOKEN } from '../../config/api'
 
 const Home: React.FC = () => {
-  const [text, setText] = useState('')
-  
-  const handleSearch = ()=>{
-    console.log('buscar')
-  }
+	const [text, setText] = useState('')
+	const dispatch = useDispatch()
 
+	const handleSearch = () => {
+		// console.log('buscar')
+		dispatch(searchRequest(text))
+	}
+	console.log(API_TOKEN)
 	return (
 		<SearchPage>
 			<h1>Millions of movies, TV shows and people to discover. Explore now.</h1>
-      <br/>
+			<br />
 			<div className="search-input">
 				<input
 					dir="auto"
@@ -22,7 +28,9 @@ const Home: React.FC = () => {
 					value={text}
 					onChange={event => setText(event.target.value)}
 				/>
-				<button type="button" onClick={handleSearch}>Search</button>
+				<button type="button" onClick={handleSearch}>
+					Search
+				</button>
 			</div>
 		</SearchPage>
 	)
