@@ -1,4 +1,4 @@
 export const {
-	API_URL = 'https://api.themoviedb.org/3/',
-	API_TOKEN = '',
+	REACT_APP_API_URL = 'https://api.themoviedb.org/3/',
+	REACT_APP_API_TOKEN = '',
 } = process.env

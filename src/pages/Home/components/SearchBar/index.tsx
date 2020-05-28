@@ -3,7 +3,7 @@ import { SearchBar } from './styles'
 import { useDispatch } from 'react-redux'
 import { push } from 'connected-react-router'
 
-import { API_TOKEN } from '../../../../config/api'
+import { REACT_APP_API_TOKEN } from '../../../../config/api'
 
 const Home: React.FC = () => {
 	const [text, setText] = useState('')
@@ -18,7 +18,7 @@ const Home: React.FC = () => {
 			handleSearch()
 		}
 	}
-	console.log(API_TOKEN)
+	console.log(REACT_APP_API_TOKEN)
 	return (
 		<SearchBar>
 			<input
