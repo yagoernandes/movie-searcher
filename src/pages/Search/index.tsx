@@ -5,6 +5,7 @@ import { searchRequest } from '../../store/ducks/api/actions'
 
 import { ResultContainer } from './styles'
 import SearchResult from './components/SearchResult'
+import SearchBar from '../Home/components/SearchBar'
 
 const Search: React.FC = () => {
 	const dispatch = useDispatch()
@@ -14,14 +15,17 @@ const Search: React.FC = () => {
 
 	React.useEffect(() => {
 		dispatch(searchRequest(queryToSearch))
-	}, [])
+	}, [queryToSearch])
 
 	return (
-		<ResultContainer>
-			{result?.results.map((res: any) => (
-				<SearchResult result={res} key={res.id} />
-			))}
-		</ResultContainer>
+		<>
+			<SearchBar />
+			<ResultContainer>
+				{result?.results.map((res: any) => (
+					<SearchResult result={res} key={res.id} />
+				))}
+			</ResultContainer>
+		</>
 	)
 }
 

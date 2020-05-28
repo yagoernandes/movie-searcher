@@ -23,10 +23,15 @@ const PersonDetails: React.FC<TProps> = () => {
 
 	return (
 		<ResultContainer>
-			<img src={`https://image.tmdb.org/t/p/w500${person?.profile_path}`} alt="poster" />
+			<img
+				src={`https://image.tmdb.org/t/p/w500${person?.profile_path}`}
+				alt="poster"
+			/>
 			<div>
 				<h1>{person?.name}</h1>
-				<h2>{person?.known_for}</h2>
+				<div className="biography">
+					<p>{person?.biography}</p>
+				</div>
 			</div>
 		</ResultContainer>
 	)

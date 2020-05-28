@@ -12,5 +12,6 @@ export const ResultContainer = styled.div`
   flex-direction: column;
   max-height: 95vh;
   overflow-y: auto;
+  overflow-x: hidden;
 
 `

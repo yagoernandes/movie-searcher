@@ -15,4 +15,9 @@ export const ResultContainer = styled.div`
     height: 450px;
     margin-right: 15px;
   }
+
+  .biography {
+    height: 300px;
+    overflow-y: auto;  
+  }
 `

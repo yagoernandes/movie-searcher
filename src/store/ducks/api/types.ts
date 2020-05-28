@@ -48,7 +48,7 @@ export interface MovieResult {
 	overview?: string
 	release_date?: string
 	genre_ids?: Array<number>
-	id?: number
+	id: number
 	original_title?: string
 	original_language?: string
 	title?: string
@@ -63,7 +63,7 @@ export interface TvResult {
 	media_type: 'tv'
 	poster_path?: string
 	popularity?: number
-	id?: number
+	id: number
 	overview?: string
 	backdrop_path?: string
 	vote_average?: number
@@ -74,13 +74,17 @@ export interface TvResult {
 	vote_count?: number
 	name?: string
 	original_name?: string
+	episode_run_time?: [number]
 }
 
 export interface PersonResult {
 	profile_path?: string
 	adult?: boolean
-	id?: number
+	id: number
 	name?: string
 	popularity?: number
 	known_for?: Array<MovieResult | TvResult>
+	known_for_department?: string
+	birthday?: string
+	biography?: string
 }

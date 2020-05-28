@@ -8,6 +8,7 @@ import {
 import { Link } from 'react-router-dom'
 
 import { SearchResultContainer } from './styles'
+import noImage from '../../../../assets/NoImage.jpg'
 
 type TProps = {
 	result: Result
@@ -24,7 +25,23 @@ const Home: React.FC<TProps> = ({ result }) => {
 		const resultTv: TvResult = result as TvResult
 		return (
 			<Link to={`/tv/${resultTv.id}`}>
-				<SearchResultContainer>{resultTv.name}</SearchResultContainer>{' '}
+				<SearchResultContainer>
+					<img
+						src={
+							resultTv.poster_path
+								? `https://image.tmdb.org/t/p/w500${resultTv.poster_path}`
+								: noImage
+						}
+					/>
+					<div className="info">
+						<h3>{resultTv.name}</h3>
+						<small>({resultTv.first_air_date?.substring(0, 4)})</small>
+						<div className="overview">
+							<p>{resultTv.overview}</p>
+							<div />
+						</div>
+					</div>
+				</SearchResultContainer>{' '}
 			</Link>
 		)
 	} else if (
@@ -35,7 +52,21 @@ const Home: React.FC<TProps> = ({ result }) => {
 		return (
 			<Link to={`/movie/${resultMovie.id}`}>
 				<SearchResultContainer>
-					{resultMovie.original_title}
+					<img
+						src={
+							resultMovie.poster_path
+								? `https://image.tmdb.org/t/p/w500${resultMovie.poster_path}`
+								: noImage
+						}
+					/>
+					<div className="info">
+						<h3>{resultMovie.original_title}</h3>
+						<small>({resultMovie.release_date?.substring(0, 4)})</small>
+						<div className="overview">
+							<p>{resultMovie.overview}</p>
+							<div />
+						</div>
+					</div>
 				</SearchResultContainer>
 			</Link>
 		)
@@ -43,7 +74,19 @@ const Home: React.FC<TProps> = ({ result }) => {
 		const resultPerson: PersonResult = result as PersonResult
 		return (
 			<Link to={`/person/${resultPerson.id}`}>
-				<SearchResultContainer>{resultPerson.name}</SearchResultContainer>
+				<SearchResultContainer>
+					<img
+						src={
+							resultPerson.profile_path
+								? `https://image.tmdb.org/t/p/w500${resultPerson.profile_path}`
+								: noImage
+						}
+					/>
+					<div className="info">
+						<h3>{resultPerson.name}</h3>
+					<span>{resultPerson.known_for_department}</span>
+					</div>
+				</SearchResultContainer>
 			</Link>
 		)
 	}

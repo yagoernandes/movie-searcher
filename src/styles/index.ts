@@ -7,7 +7,6 @@ export const Page = styled.div`
 	width: 100%;
 	flex-direction: column;
 	background-color: ${BACKGROUND_COLOR};
-	justify-content: center;
 	align-items: center;
 	line-height: 1.5em;
 	
