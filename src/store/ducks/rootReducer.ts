@@ -1,7 +1,10 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
+import { connectRouter } from 'connected-react-router'
 
-import repositories from './repositories';
+import history from '../../routes/history'
+import repositories from './repositories'
 
 export default combineReducers({
-  repositories,
-});
+	router: connectRouter(history),
+	repositories,
+})
