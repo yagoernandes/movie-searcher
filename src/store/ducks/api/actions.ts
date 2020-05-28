@@ -1,4 +1,4 @@
-import { ApiTypes, Result } from './types'
+import { ApiTypes, Result, MovieResult } from './types'
 
 export const searchRequest = (text: string) => ({
 	type: ApiTypes.SEARCH_REQUEST,
@@ -37,6 +37,11 @@ export const fetchMovie = (id: number) => ({
 
 export const fetchMovieSuccess = (data: Result) => ({
 	type: ApiTypes.FETCH_MOVIE_SUCCESS,
+	payload: data,
+})
+
+export const fetchLastMovie = (data: MovieResult) => ({
+	type: ApiTypes.FETCH_LAST_MOVIE,
 	payload: data,
 })
 

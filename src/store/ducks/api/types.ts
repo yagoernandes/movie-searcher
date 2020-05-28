@@ -13,6 +13,7 @@ export enum ApiTypes {
 	FETCH_MOVIE = '@api/FETCH_MOVIE',
 	FETCH_MOVIE_SUCCESS = '@api/FETCH_MOVIE_SUCCESS',
 	FETCH_MOVIE_FAILURE = '@api/FETCH_MOVIE_FAILURE',
+	FETCH_LAST_MOVIE = '@api/FETCH_LAST_MOVIE',
 
 	FETCH_PERSON = '@api/FETCH_PERSON',
 	FETCH_PERSON_SUCCESS = '@api/FETCH_PERSON_SUCCESS',
@@ -33,6 +34,7 @@ export interface ApiState {
 	} | null
 	readonly tvShowDetails?: TvResult | null
 	readonly movieDetails?: MovieResult | null
+	readonly lastMovie?: MovieResult | null
 	readonly personDetails?: PersonResult | null
 	readonly loading: boolean
 	readonly error: boolean
@@ -75,6 +77,7 @@ export interface TvResult {
 	name?: string
 	original_name?: string
 	episode_run_time?: [number]
+	number_of_seasons?: number
 }
 
 export interface PersonResult {

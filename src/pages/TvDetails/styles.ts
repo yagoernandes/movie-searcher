@@ -20,5 +20,6 @@ export const ResultContainer = styled.div`
     height: 100%;
     max-height: 300px;
     overflow-y: auto;
+    margin-top: 15px;
   }
 `

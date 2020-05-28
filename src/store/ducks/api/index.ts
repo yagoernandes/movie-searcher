@@ -36,6 +36,13 @@ const reducer: Reducer<ApiState> = (state = INITIAL_STATE, action) => {
 				error: false,
 				movieDetails: payload,
 			}
+		case ApiTypes.FETCH_LAST_MOVIE:
+			return {
+				...state,
+				loading: false,
+				error: false,
+				lastMovie: payload
+			}
 		case ApiTypes.FETCH_MOVIE_FAILURE:
 			return {
 				...state,

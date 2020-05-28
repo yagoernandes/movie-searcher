@@ -1,5 +1,5 @@
 import { call, put, takeLatest, all } from 'redux-saga/effects'
-import { ApiTypes } from './types'
+import { ApiTypes, Result, MovieResult } from './types'
 import api from '../../../services/api'
 import {
 	searchSuccess,
@@ -10,6 +10,7 @@ import {
 	fetchMovieFailure,
 	fetchPersonSuccess,
 	fetchPersonFailure,
+	fetchLastMovie,
 } from './actions'
 
 export default function* watcherSaga() {
@@ -54,7 +55,45 @@ export function* fetchPerson({ payload }: Action) {
 	try {
 		const response = yield call(api.get, `person/${payload}`)
 		yield put(fetchPersonSuccess(response.data))
+
+		const creditsResponse = yield call(
+			api.get,
+			`person/${payload}/movie_credits`,
+		)
+		const credits = (creditsResponse.data.cast as [Result])
+			.filter((credit: Result) => {
+				return (
+					(credit as MovieResult).release_date &&
+					(credit as MovieResult).release_date !== ''
+				)
+			})
+			.filter((credit: Result) => {
+				const date = new Date().getTime()
+				const releaseDate = new Date(
+					(credit as MovieResult).release_date || '',
+				).getTime()
+				return date > releaseDate
+			})
+			.sort(compare)
+		// console.log(credits)
+		console.log(credits[0])
+		yield put(fetchLastMovie(credits[0] as MovieResult))
 	} catch (error) {
 		yield put(fetchPersonFailure(error))
 	}
+}
+
+function compare(a: Result, b: Result) {
+	const aRelease = parseInt(
+		(a as MovieResult).release_date?.substring(0, 4) || '',
+	)
+	const bRelease = parseInt(
+		(b as MovieResult).release_date?.substring(0, 4) || '',
+	)
+	if (aRelease > bRelease) {
+		return -1
+	} else if (aRelease < bRelease) {
+		return 1
+	}
+	return 0
 }
