@@ -16,6 +16,8 @@ export default function* watcherSaga() {
 	return yield all([
 		takeLatest(ApiTypes.SEARCH_REQUEST, search),
 		takeLatest(ApiTypes.FETCH_TVSHOW, fetchTvShow),
+		takeLatest(ApiTypes.FETCH_MOVIE, fetchMovie),
+		takeLatest(ApiTypes.FETCH_PERSON, fetchPerson),
 	])
 }
 

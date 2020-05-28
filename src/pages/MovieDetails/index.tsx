@@ -1,20 +1,35 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchMovie } from '../../store/ducks/api/actions'
+import { ApplicationState } from '../../store'
 import { ResultContainer } from './styles'
 
-const Home: React.FC = () => {
+type TProps = {
+	params: object
+}
+
+const MovieDetails: React.FC<TProps> = () => {
+	const dispatch = useDispatch()
+	const { id } = useParams()
+	const movie = useSelector(
+		(state: ApplicationState) => state.api.movieDetails,
+	)
+
+	React.useEffect(() => {
+		dispatch(fetchMovie(id))
+	}, [])
+
 	return (
 		<ResultContainer>
-			<img
-				src="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-				alt="poster"
-			/>
+			<img src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} alt="poster" />
 			<div>
-				<h1>Segunda página!</h1>
-				<h2>GERADO COM O TEMPLATE DO YAGO</h2>
+				<h1>{movie?.original_title}</h1>
+				<h2>{movie?.overview}</h2>
 			</div>
 		</ResultContainer>
 	)
 }
 
-export default Home
+export default MovieDetails

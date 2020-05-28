@@ -1,33 +1,35 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-// import {} from ''
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchTvShow } from '../../store/ducks/api/actions'
+import { ApplicationState } from '../../store'
 import { ResultContainer } from './styles'
 
 type TProps = {
 	params: object
 }
 
-const Home: React.FC<TProps> = () => {
+const TvDetails: React.FC<TProps> = () => {
+	const dispatch = useDispatch()
 	const { id } = useParams()
-	console.log(id)
+	const tvShow = useSelector(
+		(state: ApplicationState) => state.api.tvShowDetails,
+	)
 
 	React.useEffect(() => {
-		console.log('pegar informações da série')
+		dispatch(fetchTvShow(id))
 	}, [])
 
 	return (
 		<ResultContainer>
-			<img
-				src="https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260https://images.pexels.com/photos/4403924/pexels-photo-4403924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-				alt="poster"
-			/>
+			<img src={`https://image.tmdb.org/t/p/w500${tvShow?.poster_path}`} alt="poster" />
 			<div>
-				<h1>Segunda página!</h1>
-				<h2>GERADO COM O TEMPLATE DO YAGO</h2>
+				<h1>{tvShow?.name}</h1>
+				<h2>{tvShow?.overview}</h2>
 			</div>
 		</ResultContainer>
 	)
 }
 
-export default Home
+export default TvDetails

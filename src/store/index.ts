@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, Store } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './ducks/rootReducer'
 import rootSaga from './ducks/rootSaga'
-import { RepositoriesState } from './ducks/repositories/types'
+import { ApiState } from './ducks/api/types'
 import {
 	routerMiddleware,
 	RouterState,
@@ -14,8 +14,8 @@ import history from '../routes/history'
 const sagaMiddleware = createSagaMiddleware()
 
 export interface ApplicationState {
-	repositories: RepositoriesState
 	router: RouterState
+	api: ApiState
 }
 
 const middlewares = [sagaMiddleware, routerMiddleware(history)]

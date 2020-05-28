@@ -28,7 +28,7 @@ const reducer: Reducer<ApiState> = (state = INITIAL_STATE, action) => {
 			}
 		///////////////////////////////
 		case ApiTypes.FETCH_MOVIE:
-			return { ...state, loading: true, result: null }
+			return { ...state, loading: true, movieDetails: null }
 		case ApiTypes.FETCH_MOVIE_SUCCESS:
 			return {
 				...state,
@@ -45,7 +45,7 @@ const reducer: Reducer<ApiState> = (state = INITIAL_STATE, action) => {
 			}
 		///////////////////////////////
 		case ApiTypes.FETCH_PERSON:
-			return { ...state, loading: true, result: null }
+			return { ...state, loading: true, personDetails: null }
 		case ApiTypes.FETCH_PERSON_SUCCESS:
 			return {
 				...state,
@@ -62,7 +62,7 @@ const reducer: Reducer<ApiState> = (state = INITIAL_STATE, action) => {
 			}
 		///////////////////////////////
 		case ApiTypes.FETCH_TVSHOW:
-			return { ...state, loading: true, result: null }
+			return { ...state, loading: true, tvShowDetails: null }
 		case ApiTypes.FETCH_TVSHOW_SUCCESS:
 			return {
 				...state,
