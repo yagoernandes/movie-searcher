@@ -19,7 +19,7 @@ const PersonDetails: React.FC<TProps> = () => {
 
 	React.useEffect(() => {
 		dispatch(fetchPerson(id))
-	}, [])
+	}, [id, dispatch])
 
 	return (
 		<ResultContainer>

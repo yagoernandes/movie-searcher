@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { PRIMARY_COLOR, SECUNDARY_COLOR } from '../../config/colors'
 
 export const SearchPage = styled.div`
 	color: #fff;

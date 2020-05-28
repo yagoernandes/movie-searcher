@@ -15,7 +15,7 @@ const Search: React.FC = () => {
 
 	React.useEffect(() => {
 		dispatch(searchRequest(queryToSearch))
-	}, [queryToSearch])
+	}, [queryToSearch, dispatch])
 
 	return (
 		<>

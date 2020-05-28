@@ -13,17 +13,18 @@ type TProps = {
 const MovieDetails: React.FC<TProps> = () => {
 	const dispatch = useDispatch()
 	const { id } = useParams()
-	const movie = useSelector(
-		(state: ApplicationState) => state.api.movieDetails,
-	)
+	const movie = useSelector((state: ApplicationState) => state.api.movieDetails)
 
 	React.useEffect(() => {
 		dispatch(fetchMovie(id))
-	}, [])
+	}, [id, dispatch])
 
 	return (
 		<ResultContainer>
-			<img src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} alt="poster" />
+			<img
+				src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+				alt="poster"
+			/>
 			<div>
 				<h1>{movie?.original_title}</h1>
 				<h2>{movie?.overview}</h2>

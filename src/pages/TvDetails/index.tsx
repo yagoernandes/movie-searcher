@@ -19,7 +19,7 @@ const TvDetails: React.FC<TProps> = () => {
 
 	React.useEffect(() => {
 		dispatch(fetchTvShow(id))
-	}, [])
+	}, [id, dispatch])
 
 	return (
 		<ResultContainer>

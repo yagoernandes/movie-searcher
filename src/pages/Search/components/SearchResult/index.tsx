@@ -32,6 +32,7 @@ const Home: React.FC<TProps> = ({ result }) => {
 								? `https://image.tmdb.org/t/p/w500${resultTv.poster_path}`
 								: noImage
 						}
+						alt="poster"
 					/>
 					<div className="info">
 						<h3>{resultTv.name}</h3>
@@ -58,6 +59,7 @@ const Home: React.FC<TProps> = ({ result }) => {
 								? `https://image.tmdb.org/t/p/w500${resultMovie.poster_path}`
 								: noImage
 						}
+						alt="poster"
 					/>
 					<div className="info">
 						<h3>{resultMovie.original_title}</h3>
@@ -81,6 +83,7 @@ const Home: React.FC<TProps> = ({ result }) => {
 								? `https://image.tmdb.org/t/p/w500${resultPerson.profile_path}`
 								: noImage
 						}
+						alt="foto"
 					/>
 					<div className="info">
 						<h3>{resultPerson.name}</h3>
