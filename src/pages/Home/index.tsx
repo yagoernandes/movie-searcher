@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SearchPage } from './styles'
 import { useDispatch } from 'react-redux'
-import { searchRequest } from '../../store/ducks/api/actions'
+import { push } from 'connected-react-router'
 
 import { API_TOKEN } from '../../config/api'
 
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
 
 	const handleSearch = () => {
 		// console.log('buscar')
-		dispatch(searchRequest(text))
+		dispatch(push(`/search?query=${encodeURIComponent(text)}`))
 	}
 	console.log(API_TOKEN)
 	return (

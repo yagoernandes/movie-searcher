@@ -6,14 +6,20 @@ import history from './history'
 import { Page } from '../styles'
 
 import Home from '../pages/Home'
-import Result from '../pages/Result'
+import Search from '../pages/Search'
+import MovieDetails from '../pages/MovieDetails'
+import TvDetails from '../pages/TvDetails'
+import PersonDetails from '../pages/PersonDetails'
 
 const Routes = () => (
 	<ConnectedRouter history={history}>
 		<Page>
 			<Switch>
 				<Route exact path="/" component={Home} />
-				<Route exact path="/result" component={Result} />
+				<Route exact path="/search" component={Search} />
+				<Route exact path="/movie/:id" component={MovieDetails} />
+				<Route exact path="/tv/:id" component={TvDetails} />
+				<Route exact path="/person/:id" component={PersonDetails} />
 			</Switch>
 		</Page>
 	</ConnectedRouter>
