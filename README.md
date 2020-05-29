@@ -1,6 +1,5 @@
 # Movie Searcher
 
-##### [Yago's Template](https://github.com/yagoernandes/template-react)
 
 <p align="center">
     <a href="https://app.netlify.com/sites/dazzling-feynman-b3e6e4/deploys">
@@ -17,7 +16,8 @@
             alt="follow on Twitter">
     </a>
 </p>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/84d00651-4036-4456-858d-66a8d8fe75a7/deploy-status)](https://app.netlify.com/sites/dazzling-feynman-b3e6e4/deploys)
+
+##### Made with [Yago's Template](https://github.com/yagoernandes/template-react)
 
 ## Instructions
 
@@ -74,11 +74,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
