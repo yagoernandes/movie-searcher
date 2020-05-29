@@ -30,22 +30,13 @@ git clone https://github.com/yagoernandes/movie-searcher
 cd movie-searcher
 ```
 
-You can run the project using docker:
-
-```shell
-docker build -t movie-searcher .
-docker run -p 80:80 -e REACT_APP_API_TOKEN=TOKEN movie-searcher
-```
-
-Or you can run the project directly from node:
-
 Copy the `.env.example` file into `.env`
 
 ```shell
 cp .env.example .env
 ```
 
-Put the API created on specific field (`REACT_APP_API_TOKEN`)
+Put the API KEY created on specific field (`REACT_APP_API_TOKEN`)
 
 Install dependencies:
 
