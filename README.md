@@ -1,4 +1,68 @@
-# [Yago's Template](https://github.com/yagoernandes/template-react)
+# Movie Searcher
+
+##### [Yago's Template](https://github.com/yagoernandes/template-react)
+
+<p align="center">
+    [![Netlify Status](https://api.netlify.com/api/v1/badges/84d00651-4036-4456-858d-66a8d8fe75a7/deploy-status)](https://app.netlify.com/sites/dazzling-feynman-b3e6e4/deploys)
+    <br />
+
+    <a href="https://github.com/yagoernandes">
+        <img src="https://img.shields.io/badge/Author-YagoErnandes-brightgreen" alt="Author" />
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/github/languages/count/YagoErnandes/previsao-do-tempo?color=brightgreen" alt="Languages" />
+    </a>
+    <br />
+    <a href="https://twitter.com/intent/follow?screen_name=yagoernandes">
+        <img src="https://img.shields.io/twitter/follow/yagoernandes?style=social&logo=twitter"
+            alt="follow on Twitter">
+    </a>
+
+</p>
+
+## Instructions
+
+First, you need a valid API key of the [TheMovieDB.org](https://www.themoviedb.org/), you can create one [here](https://www.themoviedb.org/settings/api).
+
+Clone the project from github:
+
+```shell
+git clone https://github.com/yagoernandes/movie-searcher
+cd movie-searcher
+```
+
+You can run the project using docker:
+
+```shell
+docker build -t movie-searcher .
+docker run -p 80:80 -e REACT_APP_API_TOKEN=TOKEN movie-searcher
+```
+
+Or you can run the project directly from node:
+
+Copy the `.env.example` file into `.env`
+
+```shell
+cp .env.example .env
+```
+
+Put the API created on specific field (`REACT_APP_API_TOKEN`)
+
+Install dependencies:
+
+```shell
+yarn
+# or
+npm i
+```
+
+Start the application:
+
+```shell
+yarn start
+# or
+npm start
+```
 
 ## Available Scripts
 
@@ -26,22 +90,6 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ---
 
