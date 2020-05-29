@@ -6,10 +6,12 @@ import { fetchPerson } from '../../store/ducks/api/actions'
 import {
 	personSelector,
 	lastMovieSelector,
+	loadingSelector,
 } from '../../store/ducks/api/selectors'
 import { ResultContainer } from './styles'
 import { yearsPassed } from '../../services/date'
 import noImage from '../../assets/NoImage.jpg'
+import Loader from '../../components/Loader'
 
 type TProps = {
 	params: object
@@ -20,12 +22,15 @@ const PersonDetails: React.FC<TProps> = () => {
 	const { id } = useParams()
 	const person = useSelector(personSelector)
 	const lastMovie = useSelector(lastMovieSelector)
+	const loading = useSelector(loadingSelector)
 
 	React.useEffect(() => {
 		dispatch(fetchPerson(id))
 	}, [id, dispatch])
 
-	return (
+	return loading ? (
+		<Loader />
+	) : (
 		<ResultContainer>
 			<img
 				src={

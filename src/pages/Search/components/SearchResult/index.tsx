@@ -33,7 +33,7 @@ const Home: React.FC<TProps> = ({ result }) => {
 					/>
 					<div className="info">
 						<h3>{resultTv.name}</h3>
-						<small>({resultTv.first_air_date?.substring(0, 4)})</small>
+						<small>TV Show ({resultTv.first_air_date?.substring(0, 4)})</small>
 						<div className="overview">
 							<p>{resultTv.overview}</p>
 							<div />
@@ -60,7 +60,7 @@ const Home: React.FC<TProps> = ({ result }) => {
 					/>
 					<div className="info">
 						<h3>{resultMovie.original_title}</h3>
-						<small>({resultMovie.release_date?.substring(0, 4)})</small>
+						<small>Movie ({resultMovie.release_date?.substring(0, 4)})</small>
 						<div className="overview">
 							<p>{resultMovie.overview}</p>
 							<div />

@@ -7,6 +7,10 @@ export const SearchResultContainer = styled.div`
 	margin: 5px;
 	color: #000;
 
+	small {
+		color: #999
+	}
+
 	img {
 		height: 140px;
 		width: auto;

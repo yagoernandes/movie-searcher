@@ -46,12 +46,12 @@ export const fetchLastMovie = (id: number) => ({
 })
 
 export const fetchLastMovieSuccess = (data: MovieResult) => ({
-	type: ApiTypes.FETCH_LAST_MOVIE,
+	type: ApiTypes.FETCH_LAST_MOVIE_SUCCESS,
 	payload: data,
 })
 
 export const fetchLastMovieFailure = (error: any) => ({
-	type: ApiTypes.FETCH_LAST_MOVIE,
+	type: ApiTypes.FETCH_LAST_MOVIE_FAILURE,
 	payload: error,
 })
 

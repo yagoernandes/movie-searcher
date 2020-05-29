@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
 
 import history from './history'
-import { Page } from '../styles'
+import { Page, Background } from '../styles'
 
 import Home from '../pages/Home'
 import Search from '../pages/Search'
@@ -13,6 +13,7 @@ import PersonDetails from '../pages/PersonDetails'
 
 const Routes = () => (
 	<ConnectedRouter history={history}>
+		<Background />
 		<Page>
 			<Switch>
 				<Route exact path="/" component={Home} />
