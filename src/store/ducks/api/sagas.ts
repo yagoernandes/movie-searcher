@@ -10,7 +10,8 @@ import {
 	fetchMovieFailure,
 	fetchPersonSuccess,
 	fetchPersonFailure,
-	fetchLastMovie,
+	fetchLastMovieSuccess,
+	fetchLastMovieFailure,
 } from './actions'
 
 export default function* watcherSaga() {
@@ -19,6 +20,7 @@ export default function* watcherSaga() {
 		takeLatest(ApiTypes.FETCH_TVSHOW, fetchTvShow),
 		takeLatest(ApiTypes.FETCH_MOVIE, fetchMovie),
 		takeLatest(ApiTypes.FETCH_PERSON, fetchPerson),
+		takeLatest(ApiTypes.FETCH_PERSON, fetchLastMovie),
 	])
 }
 
@@ -55,7 +57,13 @@ export function* fetchPerson({ payload }: Action) {
 	try {
 		const response = yield call(api.get, `person/${payload}`)
 		yield put(fetchPersonSuccess(response.data))
+	} catch (error) {
+		yield put(fetchPersonFailure(error))
+	}
+}
 
+export function* fetchLastMovie({payload}:Action){
+	try{
 		const creditsResponse = yield call(
 			api.get,
 			`person/${payload}/movie_credits`,
@@ -75,11 +83,9 @@ export function* fetchPerson({ payload }: Action) {
 				return date > releaseDate
 			})
 			.sort(compare)
-		// console.log(credits)
-		console.log(credits[0])
-		yield put(fetchLastMovie(credits[0] as MovieResult))
-	} catch (error) {
-		yield put(fetchPersonFailure(error))
+		yield put(fetchLastMovieSuccess(credits[0] as MovieResult))
+	}catch (error){
+		yield put(fetchLastMovieFailure(error))
 	}
 }
 

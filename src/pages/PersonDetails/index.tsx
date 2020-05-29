@@ -6,6 +6,7 @@ import { fetchPerson } from '../../store/ducks/api/actions'
 import { ApplicationState } from '../../store'
 import { ResultContainer } from './styles'
 import { yearsPassed } from '../../services/date'
+import noImage from '../../assets/NoImage.jpg'
 
 type TProps = {
 	params: object
@@ -28,18 +29,34 @@ const PersonDetails: React.FC<TProps> = () => {
 	return (
 		<ResultContainer>
 			<img
-				src={`https://image.tmdb.org/t/p/w500${person?.profile_path}`}
+				src={
+					person?.profile_path
+						? `https://image.tmdb.org/t/p/w500${person?.profile_path}`
+						: noImage
+				}
 				alt="poster"
 			/>
 			<div>
 				<h1>{person?.name}</h1>
-				<p>📅 {person?.birthday && yearsPassed(person?.birthday)} years old</p>
-				<p>
-					🎥 Last movie:{' '}
-					<Link to={`/movie/${lastMovie?.id}`}>
-						{lastMovie?.original_title}
-					</Link>
-				</p>
+				{person?.birthday && (
+					<p>
+						<span role="img" aria-label="callendar emoji">
+							📅
+						</span>{' '}
+						{person?.birthday && yearsPassed(person?.birthday)} years old
+					</p>
+				)}
+				{lastMovie && (
+					<p>
+						<span role="img" aria-label="callendar emoji">
+							🎥
+						</span>{' '}
+						Last movie:{' '}
+						<Link to={`/movie/${lastMovie?.id}`}>
+							{lastMovie?.original_title}
+						</Link>
+					</p>
+				)}
 				<div className="biography">
 					<p>{person?.biography}</p>
 				</div>
