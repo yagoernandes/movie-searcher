@@ -26,4 +26,13 @@ export const ResultContainer = styled.div`
 		overflow-y: auto;
 		margin-top: 15px;
 	}
+
+	@media screen and (max-width: 768px) {
+		flex-direction:column;
+
+		img{
+			margin-right: 0;
+			align-self: center;
+		}
+	}
 `
