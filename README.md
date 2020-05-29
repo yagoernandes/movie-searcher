@@ -3,22 +3,22 @@
 ##### [Yago's Template](https://github.com/yagoernandes/template-react)
 
 <p align="center">
-    [![Netlify Status](https://api.netlify.com/api/v1/badges/84d00651-4036-4456-858d-66a8d8fe75a7/deploy-status)](https://app.netlify.com/sites/dazzling-feynman-b3e6e4/deploys)
-    <br />
-
     <a href="https://github.com/yagoernandes">
         <img src="https://img.shields.io/badge/Author-YagoErnandes-brightgreen" alt="Author" />
     </a>
     <a href="#">
-        <img src="https://img.shields.io/github/languages/count/YagoErnandes/previsao-do-tempo?color=brightgreen" alt="Languages" />
+        <img src="https://img.shields.io/github/languages/count/YagoErnandes/movie-searcher?color=brightgreen" alt="Languages" />
+    </a>
+    <a href="https://github.com/yagoernandes/movie-searcher/stargazers">
+        <img src="https://img.shields.io/github/stars/YagoErnandes/movie-searcher?color=brightgreen" alt="Stars" />
     </a>
     <br />
     <a href="https://twitter.com/intent/follow?screen_name=yagoernandes">
         <img src="https://img.shields.io/twitter/follow/yagoernandes?style=social&logo=twitter"
             alt="follow on Twitter">
     </a>
-
 </p>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/84d00651-4036-4456-858d-66a8d8fe75a7/deploy-status)](https://app.netlify.com/sites/dazzling-feynman-b3e6e4/deploys)
 
 ## Instructions
 
