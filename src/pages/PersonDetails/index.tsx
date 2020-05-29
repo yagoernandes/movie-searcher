@@ -3,7 +3,10 @@ import { useParams, Link } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPerson } from '../../store/ducks/api/actions'
-import { ApplicationState } from '../../store'
+import {
+	personSelector,
+	lastMovieSelector,
+} from '../../store/ducks/api/selectors'
 import { ResultContainer } from './styles'
 import { yearsPassed } from '../../services/date'
 import noImage from '../../assets/NoImage.jpg'
@@ -15,12 +18,8 @@ type TProps = {
 const PersonDetails: React.FC<TProps> = () => {
 	const dispatch = useDispatch()
 	const { id } = useParams()
-	const person = useSelector(
-		(state: ApplicationState) => state.api.personDetails,
-	)
-	const lastMovie = useSelector(
-		(state: ApplicationState) => state.api.lastMovie,
-	)
+	const person = useSelector(personSelector)
+	const lastMovie = useSelector(lastMovieSelector)
 
 	React.useEffect(() => {
 		dispatch(fetchPerson(id))

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchTvShow } from '../../store/ducks/api/actions'
-import { ApplicationState } from '../../store'
+import { tvShowSelector } from '../../store/ducks/api/selectors'
 import { ResultContainer } from './styles'
 import { formatDate } from '../../services/date'
 
@@ -14,9 +14,7 @@ type TProps = {
 const TvDetails: React.FC<TProps> = () => {
 	const dispatch = useDispatch()
 	const { id } = useParams()
-	const tvShow = useSelector(
-		(state: ApplicationState) => state.api.tvShowDetails,
-	)
+	const tvShow = useSelector(tvShowSelector)
 
 	React.useEffect(() => {
 		dispatch(fetchTvShow(id))

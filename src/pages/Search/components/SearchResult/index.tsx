@@ -15,9 +15,6 @@ type TProps = {
 }
 
 const Home: React.FC<TProps> = ({ result }) => {
-	// const dispatch = useDispatch()
-	// const result = useSelector((state: any) => state.api.result)
-
 	if (
 		(result as TvResult).media_type &&
 		(result as TvResult).media_type === 'tv'
