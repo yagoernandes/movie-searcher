@@ -1,25 +1,54 @@
 # Movie Searcher
 
-
 <p align="center">
-    <a href="https://app.netlify.com/sites/dazzling-feynman-b3e6e4/deploys">
-        <img src="https://api.netlify.com/api/v1/badges/84d00651-4036-4456-858d-66a8d8fe75a7/deploy-status" alt="Netlify" />
-    </a>
-    <a href="https://github.com/yagoernandes">
+  <a href="https://github.com/yagoernandes/template-react">
+    <img src="https://img.shields.io/static/v1?label=react%20template&message=YagoErnandes&color=blue&logo=REACT"/>
+  </a>
+  <a href="https://github.com/yagoernandes">
         <img src="https://img.shields.io/badge/Author-YagoErnandes-brightgreen" alt="Author" />
     </a>
     <a href="#">
         <img src="https://img.shields.io/github/languages/count/YagoErnandes/movie-searcher?color=brightgreen" alt="Languages" />
     </a>
+    <br />
     <a href="https://twitter.com/intent/follow?screen_name=yagoernandes">
         <img src="https://img.shields.io/twitter/follow/yagoernandes?style=social&logo=twitter"
-            alt="follow on Twitter">
+            alt="follow on Twitter" />
     </a>
+  <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green"/>
 </p>
 
-##### Made with [Yago's Template](https://github.com/yagoernandes/template-react)
+> Search by movies and tv shows with an simple interface
 
-## Instructions
+<p align="center"><img src=".github/images/index.png"/></p>
+<p align="center"><img src=".github/images/search.png"/></p>
+<p align="center"><img src=".github/images/search-result.png"/></p>
+
+## Sumary 
+
+- [Description](#eyes-overview)
+
+- [Pre requisites](#warning-pre-requisites)
+
+- [How to run](#construction_worker-how-to-run)
+
+- [Dependencies](#books-dependecies)
+
+- [License](#license)
+
+## :eyes: Overview 
+
+<p align="justify">
+  With [Movie Searcher](https://github.com/yagoernandes/movie-searcher) you can search in a catalog with millions of movies and tv shows, you can see important data about the movie and tv show.
+</p>
+
+
+## :warning: Pre requisites
+
+- [Node](https://nodejs.org/en/download/)
+
+
+## :construction_worker: How to run:
 
 First, you need a valid API key of the [TheMovieDB.org](https://www.themoviedb.org/), you can create one [here](https://www.themoviedb.org/settings/api).
 
@@ -54,27 +83,20 @@ yarn start
 npm start
 ```
 
-## Available Scripts
+## :books: Dependecies 
 
-In the project directory, you can run:
+- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
+- [Typescript](https://www.typescriptlang.org/)
+- [React Router DOM](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Redux Saga](https://redux-saga.js.org/)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://github.com/axios/axios)
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## License
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The [MIT License]() (MIT)
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ---
 
