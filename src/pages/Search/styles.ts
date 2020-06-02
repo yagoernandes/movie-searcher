@@ -13,5 +13,8 @@ export const ResultContainer = styled.div`
   max-height: 95vh;
   overflow-y: auto;
   overflow-x: hidden;
+  span{
+    text-align: center;
+  }
 
 `

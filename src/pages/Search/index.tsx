@@ -29,9 +29,18 @@ const Search: React.FC = () => {
 		<>
 			<SearchBar />
 			<ResultContainer>
-				{result?.results.map((res: any) => (
+				{
+				result?.results.map((res: any) => (
 					<SearchResult result={res} key={res.id} />
-				))}
+				))
+				}
+
+				{
+					((result?.results.length || 0) <= 0) && <>
+						<span>Sorry, we can't find any result.</span>
+						<span>Try with other words, and check your internet connection.</span>
+					</>
+				}
 			</ResultContainer>
 		</>
 	)
