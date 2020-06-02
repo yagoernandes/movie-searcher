@@ -42,7 +42,7 @@
 ## :eyes: Overview 
 
 <p align="justify">
-  With [Movie Searcher](https://github.com/yagoernandes/movie-searcher) you can search in a catalog with millions of movies and tv shows, you can see important data about the movie and tv show.
+  With MovieSearcher you can search in a catalog with millions of movies and tv shows, you can see important data about the movie and tv show.
 </p>
 
 
