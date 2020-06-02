@@ -11,6 +11,9 @@
         <img src="https://img.shields.io/github/languages/count/YagoErnandes/movie-searcher?color=brightgreen" alt="Languages" />
     </a>
     <br />
+    <a href="https://app.netlify.com/sites/dazzling-feynman-b3e6e4/deploys">
+        <img src="https://api.netlify.com/api/v1/badges/84d00651-4036-4456-858d-66a8d8fe75a7/deploy-status" alt="Netlify" />
+    </a>
     <a href="https://twitter.com/intent/follow?screen_name=yagoernandes">
         <img src="https://img.shields.io/twitter/follow/yagoernandes?style=social&logo=twitter"
             alt="follow on Twitter" />
